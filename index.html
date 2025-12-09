@@ -1,119 +1,36 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>领导去向状态看板</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Christmas Magic Particles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body { margin: 0; padding: 0; overflow: hidden; background-color: #050505; color: white; }
+      #root { width: 100vw; height: 100vh; }
+      /* Custom scrollbar for webkit */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #111; }
+      ::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.4.2",
+    "@mediapipe/tasks-vision": "https://aistudiocdn.com/@mediapipe/tasks-vision@^0.10.22-rc.20250304",
+    "@react-three/drei": "https://aistudiocdn.com/@react-three/drei@^10.7.7",
+    "three": "https://aistudiocdn.com/three@^0.181.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body>
-    <div class="container">
-        <header class="dashboard-header">
-            <div class="header-content">
-                <h1>领导去向状态看板</h1>
-                <p><i class="fas fa-broadcast-tower"></i> 实时数据同步</p>
-            </div>
-            <div class="header-controls">
-                <button class="refresh-button" id="refreshButton">
-                    <i class="fas fa-sync-alt"></i>
-                    刷新数据
-                </button>
-            </div>
-        </header>
-
-        <div class="time-stamps">
-            <p class="timestamp" id="timestamp"><i class="far fa-clock"></i> 最后更新：--:--:--</p>
-            <p class="timestamp" id="currentTime"><i class="fas fa-clock"></i> 当前时间：--:--:--</p>
-        </div>
-
-        <div class="carousel-container">
-            <div class="table-container">
-                <div class="table-header">
-                    <div>序号</div>
-                    <div>状态</div>
-                    <div>姓名</div>
-                    <div>职位</div>
-                    <div>去向</div>
-                    <div>日程安排时间</div>
-                </div>
-                <div class="table-body" id="tableBody">
-                    <!-- Data rows will be dynamically inserted here -->
-                </div>
-            </div>
-            <div class="controls">
-                <div class="row-count-control">
-                    <label for="rowCount"><i class="fas fa-list"></i> 显示行数</label>
-                    <div class="number-input">
-                        <button class="minus" id="decreaseRows">-</button>
-                        <input type="number" id="rowCount" min="2" max="100" value="5">
-                        <button class="plus" id="increaseRows">+</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-            
-        <div class="stats-container">
-            <div class="stat-card stat-available">
-                <div class="stat-header">
-                    <div class="stat-header-content">
-                        <span class="stat-title">在岗</span>
-                        <div class="stat-icon">
-                            <i class="fas fa-check"></i>
-                        </div>
-                    </div>
-                    <div class="stat-count" id="availableCount">0</div>
-                </div>
-            </div>
-            
-            <div class="stat-card stat-busy">
-                <div class="stat-header">
-                    <div class="stat-header-content">
-                        <span class="stat-title">会议</span>
-                        <div class="stat-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                    </div>
-                    <div class="stat-count" id="busyCount">0</div>
-                </div>
-            </div>
-            
-            <div class="stat-card stat-away">
-                <div class="stat-header">
-                    <div class="stat-header-content">
-                        <span class="stat-title">出差</span>
-                        <div class="stat-icon">
-                            <i class="fas fa-plane"></i>
-                        </div>
-                    </div>
-                    <div class="stat-count" id="awayCount">0</div>
-                </div>
-            </div>
-            
-            <div class="stat-card stat-break">
-                <div class="stat-header">
-                    <div class="stat-header-content">
-                        <span class="stat-title">休息</span>
-                        <div class="stat-icon">
-                            <i class="fas fa-coffee"></i>
-                        </div>
-                    </div>
-                    <div class="stat-count" id="breakCount">0</div>
-                </div>
-            </div>
-        </div>
-    </div>
-        <script>
-       window.dingtalkAgentConfig = {
-        code: 'reDaONknxh',
-        orbIcon: '',
-       }
-      </script>
-      <script
-       src="https://g.alicdn.com/dingding-frontend/dd-lui-inside/0.0.6/magicOrb.js"
-       defer>
-      </script>
-    <script src="script.js"></script>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
-
 </html>
